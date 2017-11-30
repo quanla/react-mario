@@ -372,7 +372,23 @@ function getter(by) {
 }
 
 function equalDeep(o1, o2) {
-    return _.isEqual(o1, o2);
+    if (o1 === o2) {
+        return true;
+    }
+    if (typeof o1 !== "object" || typeof o2 !== "object") {
+        return false;
+    }
+    for (let k in o1) {
+        if (!equalDeep(o1[k], o2[k])) {
+            return false;
+        }
+    }
+    for (let k in o2) {
+        if (!o1.hasOwnProperty(k)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function concat(path, obj, pushArr) {
