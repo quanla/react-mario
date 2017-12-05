@@ -75,7 +75,7 @@ export class Sample extends RComponent {
                 <div className="ground"/>
 
                 <img
-                    src={`/assets/img/mario/${mario.y > 0 ? "jump" : mario.vx !== 0 ? "walk" : "stand"}_${mario.dir}.gif`}
+                    src={`assets/img/mario/${mario.y > 0 ? "jump" : mario.vx !== 0 ? "walk" : "stand"}_${mario.dir}.gif`}
                     style={{
                         left: 100 + mario.x,
                         bottom: mario.y + 80,
